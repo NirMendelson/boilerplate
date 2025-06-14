@@ -1,7 +1,6 @@
 const express = require('express');
 require('dotenv').config({ path: '../.env' });
 const connectDB = require('./config/db');
-const pingRoutes = require('./routes/ping');
 const customerRoutes = require('./routes/customer');
 
 const app = express();
@@ -13,7 +12,6 @@ app.use(express.json());
 connectDB(process.env.MONGODB_URI, process.env.MONGODB_DBNAME);
 
 // Routes
-app.use('/api', pingRoutes);
 app.use('/api', customerRoutes);
 
 app.listen(PORT, () => {

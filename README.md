@@ -1,48 +1,33 @@
-# 🧱 Full-Stack Boilerplate for Cursor  
-*React + Tailwind + MongoDB + Clerk*
+# 🧱 Full-Stack Boilerplate for New Projects
 
-A ready-to-go full-stack setup designed for use in **[Cursor](https://cursor.sh)**. Comes pre-configured with:
+Welcome! This repository is a boilerplate for starting new full-stack projects with React, Tailwind CSS, MongoDB, and Clerk authentication.
 
-- ✅ **React (Vite)**
-- 🎨 **Tailwind CSS**
-- 🔐 **Clerk** Authentication
-- 🗄 **MongoDB** (via Mongoose)
-- ⚡ **Optimized dev experience in Cursor**
-
-Perfect for rapidly building SaaS apps, internal tools, or MVPs.
+**Follow the steps below to quickly set up your own project and be ready to start building.**
 
 ---
 
-## ⚙️ What's Inside?
+1. **Clone this repo:**
+   ```sh
+   git clone <this-repo-url> <your-new-project-name>
+   cd <your-new-project-name>
+   ```
 
-- **Clerk** pre-integrated (Sign in, JWT, user context)
-- **MongoDB** setup with `.env` and `mongoose`
-- **Tailwind** and `@headlessui` for rapid UI development
-- **Clean folder structure** for frontend/backend
-- **Cursor-ready** setup with `mcpServers` configured for MongoDB
+2. **Create a `.env` file in the project root with these variables:**
+   ```
+   VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   MONGODB_URI=your_mongodb_connection_string
+   MONGODB_DBNAME=your_database_name
+   ```
+   - Set `VITE_CLERK_PUBLISHABLE_KEY` to your Clerk publishable key.
+   - Set `MONGODB_URI` to your MongoDB connection string (without a database name).
+   - Set `MONGODB_DBNAME` to the name of the database you want to use for this project.
+
+3. **Create a new Clerk app:**
+   - Go to [Clerk dashboard](https://dashboard.clerk.com/), create a new app, and copy the new publishable key.
+
+4. **Update Clerk key:**
+   - Edit `.env` and set `VITE_CLERK_PUBLISHABLE_KEY` to your new key.
 
 ---
 
-## 🚀 Getting Started in Cursor
-
-### 1. Install dependencies
-
-Use the built-in Cursor terminal:
-
-```bash
-npm install
-
-```
-
-## 📋 Tasks
-
-- [ ] Install dependencies (`npm install`)
-- [ ] Initialize Tailwind CSS (`npx tailwindcss init`)
-- [ ] Configure `tailwind.config.js` for your template paths
-- [ ] Create or update `postcss.config.js` for Tailwind
-- [ ] Add Tailwind directives to your main CSS file (e.g., `src/index.css`)
-- [ ] Verify Tailwind works in a React component
-- [ ] Set up Clerk authentication (configure `.env` and Clerk provider)
-- [ ] Set up MongoDB connection (configure `.env` and Mongoose)
-- [ ] Run the development server (`npm run dev`)
-- [ ] Commit initial setup to version control
+That's it! Now install dependencies and run the project as usual. 
