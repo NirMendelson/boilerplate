@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 🛠️ Tech Stack
+
+Our standardized technology stack for different project types.
+
+---
+
+### 🐍 Algorithm Projects
+
+**Python + Flask**
+
+- **Python** - Primary language for data processing, algorithms, and ML
+- **Flask** - Lightweight web framework for API endpoints and simple web interfaces
+
+---
+
+### 🌐 Web Development
+
+**Frontend**
+- **React** - Component-based UI library
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Material UI** - React component library (when needed)
+- **shadcn/ui** - Modern component library built on Radix UI
+
+**Backend**
+- **Node.js** - JavaScript runtime for server-side development
+- **MongoDB** - NoSQL database for flexible data storage
+- **MCP** - MongoDB Change Streams for real-time data
+
+**Authentication**
+- **Clerk** - User authentication and management
+
+---
+
+### 🧪 Testing & Quality
+
+- **Playwright** - End-to-end testing framework
+- **Husky** - Git hooks to run E2E tests before each push
+
+---
+
+### 🚀 Deployment & Infrastructure
+
+- **Vercel** - Frontend deployment and serverless functions
+- **PM2** - Process manager for Node.js applications in production
+
+---
+
+### 📋 Stack Summary
+
+**Algorithm Projects:** Python + Flask  
+**Web Frontend:** React + Vite + Tailwind + shadcn/ui  
+**Web Backend:** Node.js + MongoDB + Clerk  
+**Testing:** Playwright + Husky  
+**Deployment:** Vercel + PM2  
+
+
+This stack provides a solid foundation for building scalable, maintainable applications while keeping our development workflow consistent across projects.

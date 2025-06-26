@@ -1,0 +1,115 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 📘 Indie Dev Rules – How to Code Like a Pro
+
+A checklist of non-negotiable rules I follow to keep my projects clean, stable, and production-ready.
+
+---
+
+## 🧱 Project Structure
+
+**Don't write everything in one file.**
+
+- Separate concerns into folders:
+  - `/routes`, `/controllers`, `/services`, `/models`, `/utils`
+- Break up frontend into reusable components.
+- Keep each file focused and under 200 lines where possible.
+- Store config and secrets in environment variables (see below).
+
+---
+
+## 🌿 Git Hygiene
+
+**Use Git like a professional, not like Dropbox.**
+
+- Use **two main branches**:
+  - `dev`: development branch with experimental changes and `console.log()`s allowed.
+  - `prod`: stable, production-ready branch (often `main` or `master`), with clean logs and polished features.
+- Feature branches are created from `dev`:  
+  `feature/signup-form`, `fix/email-bug`
+- Commit messages should explain *why*, not just *what*:
+  - ✅ `fix: handle null email edge case`
+  - ❌ `update` / `test2` / `final-final`
+- Add a `.gitignore` to exclude:
+  - `node_modules/`
+  - `.env`
+  - `.DS_Store`
+
+---
+
+## ✅ Auto Testing
+
+**Every project must include automated tests.**
+
+- Write at least one **end-to-end test** for core flows (e.g., login, form submission).
+- Use tools like:
+  - [Playwright](https://playwright.dev)
+  - [Cypress](https://cypress.io)
+  - [Jest](https://jestjs.io/) for unit tests
+- Add `Husky` + `lint-staged` to run tests before every commit:
+  ```bash
+  npx husky-init && npm install
+  npx husky add .husky/pre-commit "npm test"
+  ```
+
+---
+
+## 📡 Logging & Error Handling
+
+**Don't let your app crash silently.**
+
+- Wrap important logic with `try/catch`.
+- Never leave raw `console.log()` in production.
+- Use structured logging with tools like:
+  - [Winston](https://github.com/winstonjs/winston)
+  - [Sentry](https://sentry.io) for error tracking
+- Log critical actions: login, signup, payment, errors, etc.
+
+---
+
+## 🧾 Documentation
+
+**If you don't write it down, it doesn't exist.**
+
+- Your `README.md` must include:
+  - What the project does
+  - How to install and run it
+  - How to deploy it
+  - Screenshots or GIFs if possible
+- Add inline comments for any complex or non-obvious logic.
+- Use a `tasks.md` or issue tracker to manage progress.
+
+---
+
+## 🧪 Separate Environments
+
+**Never test in production. Always use environment separation.**
+
+- Create two `.env` files:
+  - `.env.development` — includes test API keys, dev Mongo URI, etc.
+  - `.env.production` — includes real keys, production endpoints.
+- Example `.env`:
+  ```env
+  MONGO_URI=your-dev-uri
+  NEXT_PUBLIC_API_URL=http://localhost:3000
+  ```
+- Use `dotenv` or your framework's environment loader.
+- Never commit `.env` files — always add them to `.gitignore`.
+
+---
+
+## 🏁 Summary
+
+Follow these 6 rules on every project:
+
+1. **Clean, modular structure**
+2. **Two-branch Git workflow** (dev & prod)
+3. **Mandatory testing**
+4. **Logging & error handling**
+5. **Proper documentation**
+6. **Dev/prod environment separation**
+
+Keep this file in every repo. This is how I build.
